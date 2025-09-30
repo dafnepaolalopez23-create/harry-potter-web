@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Harry Potter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
     <style>
+        /* Contacto */
         #contacto form {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 30px;
@@ -46,7 +48,7 @@
             scroll-behavior: smooth;
         }
 
-        /* --- Fondo: Gran Comedor --- */
+        /* --- Fondo --- */
         body {
             margin: 0;
             padding: 0;
@@ -55,12 +57,11 @@
             position: relative;
             overflow-x: hidden;
             z-index: 0;
-
             background-image: url('imagenes/0000.jfif');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed; 
+            background-attachment: fixed;
         }
 
         body::after {
@@ -185,6 +186,48 @@
             font-style: italic;
             color: #ffc107;
         }
+
+        /* 📱 Diseño responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            p, ul {
+                font-size: 1.1em;
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            #contacto form {
+                padding: 20px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6em;
+            }
+
+            nav a {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -263,6 +306,7 @@
             </ul>
             <img src="imagenes/qqqqqq.webp" alt="Wizarding World">
         </section>
+
     </div>
 
     <section id="contacto">
@@ -284,7 +328,7 @@
 
             <!-- Opcionales para configuración de Formsubmit -->
             <input type="hidden" name="_captcha" value="false">
-           <input type="hidden" name="_next" value="https://dafnepaolalopez23-create.github.io/harry-potter-web/">
+            <input type="hidden" name="_next" value="https://dafnepaolalopez23-create.github.io/harry-potter-web/">
 
             <!-- Botón para enviar -->
             <button type="submit">Enviar mensaje</button>
@@ -293,3 +337,4 @@
 
 </body>
 </html>
+
