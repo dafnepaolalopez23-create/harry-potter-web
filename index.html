@@ -269,7 +269,67 @@
                 <li>Harry Potter y la piedra filosofal (1997)</li>
                 <li>Harry Potter y la cámara secreta (1998)</li>
                 <li>Harry Potter y el prisionero de Azkaban (1999)</li>
-                <li>Harry Potter y el cáliz de fuego (2000)</li>
+                <li>Harry Potter y el cáliz de fuego (2000)</li>.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.5em;
+    color: #FFD700;
+}
+
+.menu-toggle {
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: #FFD700;
+    cursor: pointer;
+    display: none; /* oculto en escritorio */
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* se muestra en móviles */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(8, 17, 29, 0.95);
+        border-top: 1px solid #FFD700;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 99;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 15px 0;
+    }
+}
+
                 <li>Harry Potter y la Orden del Fénix (2003)</li>
                 <li>Harry Potter y el misterio del príncipe (2005)</li>
                 <li>Harry Potter y las reliquias de la muerte (2007)</li>
