@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Harry Potter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
     <style>
         /* Contacto */
         #contacto form {
@@ -87,7 +87,30 @@
             border-bottom: 2px solid #FFD700;
         }
 
-        nav ul {
+        /* Contenedor para logo y hamburguesa */
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.8em;
+            color: #FFD700;
+            user-select: none;
+        }
+
+        .menu-toggle {
+            font-size: 2em;
+            background: none;
+            border: none;
+            color: #FFD700;
+            cursor: pointer;
+            display: none; /* oculto en escritorio */
+        }
+
+        ul.nav-links {
             list-style: none;
             display: flex;
             justify-content: center;
@@ -96,7 +119,7 @@
             padding: 0;
         }
 
-        nav ul li {
+        ul.nav-links li {
             margin: 0 20px;
         }
 
@@ -188,14 +211,44 @@
         }
 
         /* 📱 Diseño responsive */
+
         @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
+            .menu-toggle {
+                display: block; /* mostrar hamburguesa */
             }
 
-            nav ul li {
-                margin: 10px 0;
+            ul.nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(8, 17, 29, 0.95);
+                border-top: 1px solid #FFD700;
+                position: absolute;
+                left: 0;
+                top: 60px; /* debajo del nav */
+                z-index: 99;
+            }
+
+            ul.nav-links.active {
+                display: flex;
+            }
+
+            ul.nav-links li {
+                margin: 15px 0;
+                text-align: center;
+            }
+
+            /* Desaparece la estructura flex en móvil */
+            nav {
+                padding: 15px 15px 15px 15px;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            #contacto form {
+                padding: 20px 15px;
             }
 
             h1 {
@@ -208,14 +261,6 @@
 
             img {
                 max-width: 100%;
-            }
-
-            .container {
-                padding: 20px 15px;
-            }
-
-            #contacto form {
-                padding: 20px 15px;
             }
         }
 
@@ -234,7 +279,11 @@
 
     <!-- 🌟 Menú de navegación mágico -->
     <nav>
-        <ul>
+        <div class="menu-container">
+            <div class="logo">Harry Potter</div>
+            <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+        </div>
+        <ul class="nav-links">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#libros">Libros</a></li>
             <li><a href="#peliculas">Películas</a></li>
@@ -257,10 +306,10 @@
                 Desde su publicación inicial en 1997 con <em>Harry Potter y la piedra filosofal</em>, la saga ha ganado popularidad mundial,
                 ha vendido más de <strong>500 millones</strong> de copias y se ha traducido a más de <strong>80 idiomas</strong>.
             </p>
-            <img src="imagenes/papapa.webp" alt="Harry Potter portada">
+            <img src="imagenes/papapa.webp" alt="Harry Potter portada" />
         </section>
 
-        <hr>
+        <hr />
 
         <section id="libros">
             <h1>Libros de la Saga</h1>
@@ -269,67 +318,7 @@
                 <li>Harry Potter y la piedra filosofal (1997)</li>
                 <li>Harry Potter y la cámara secreta (1998)</li>
                 <li>Harry Potter y el prisionero de Azkaban (1999)</li>
-                <li>Harry Potter y el cáliz de fuego (2000)</li>.menu-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.5em;
-    color: #FFD700;
-}
-
-.menu-toggle {
-    font-size: 2em;
-    background: none;
-    border: none;
-    color: #FFD700;
-    cursor: pointer;
-    display: none; /* oculto en escritorio */
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links li {
-    margin: 0 20px;
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* se muestra en móviles */
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: rgba(8, 17, 29, 0.95);
-        border-top: 1px solid #FFD700;
-        position: absolute;
-        left: 0;
-        top: 100%;
-        z-index: 99;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        text-align: center;
-        margin: 15px 0;
-    }
-}
-
+                <li>Harry Potter y el cáliz de fuego (2000)</li>
                 <li>Harry Potter y la Orden del Fénix (2003)</li>
                 <li>Harry Potter y el misterio del príncipe (2005)</li>
                 <li>Harry Potter y las reliquias de la muerte (2007)</li>
@@ -337,22 +326,22 @@
             <p>
                 Cada libro narra un año escolar y los desafíos que Harry enfrenta para derrotar al oscuro mago <strong>Lord Voldemort</strong>.
             </p>
-            <img src="imagenes/D_NQ_NP_656833-MLM53400396370_012023-O.webp" alt="Libros de Harry Potter">
+            <img src="imagenes/D_NQ_NP_656833-MLM53400396370_012023-O.webp" alt="Libros de Harry Potter" />
         </section>
 
-        <hr>
+        <hr />
 
         <section id="peliculas">
             <h1>Adaptaciones Cinematográficas</h1>
             <p>
                 La saga fue adaptada al cine entre <strong>2001 y 2011</strong>, generando una franquicia de 8 películas que recaudaron más de 
-                <strong>7 mil millones de dólares</strong> en todo el mundo. <br>
+                <strong>7 mil millones de dólares</strong> en todo el mundo. <br />
                 <strong>Daniel Radcliffe</strong> (Harry), <strong>Emma Watson</strong> (Hermione) y <strong>Rupert Grint</strong> (Ron) se convirtieron en íconos culturales.
             </p>
-            <img src="imagenes/harry-potter-saga 2.webp" alt="Películas de Harry Potter">
+            <img src="imagenes/harry-potter-saga 2.webp" alt="Películas de Harry Potter" />
         </section>
 
-        <hr>
+        <hr />
 
         <section id="universo">
             <h1>Universo mágico (Wizarding World)</h1>
@@ -364,7 +353,7 @@
                 <li>Videojuegos como <strong>Hogwarts Legacy</strong>.</li>
                 <li>Parques temáticos como <em>The Wizarding World of Harry Potter</em>.</li>
             </ul>
-            <img src="imagenes/qqqqqq.webp" alt="Wizarding World">
+            <img src="imagenes/qqqqqq.webp" alt="Wizarding World" />
         </section>
 
     </div>
@@ -376,25 +365,34 @@
         <form action="https://formsubmit.co/dafnepaolalopez23@cbtis179.edu.mx" method="POST">
             <!-- Campo para el nombre -->
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="name" required>
+            <input type="text" id="nombre" name="name" required />
 
             <!-- Campo para el correo -->
             <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required />
 
             <!-- Campo para el mensaje -->
             <label for="mensaje">Mensaje:</label>
             <textarea id="mensaje" name="message" rows="6" required></textarea>
 
             <!-- Opcionales para configuración de Formsubmit -->
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://dafnepaolalopez23-create.github.io/harry-potter-web/">
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://dafnepaolalopez23-create.github.io/harry-potter-web/" />
 
             <!-- Botón para enviar -->
             <button type="submit">Enviar mensaje</button>
         </form>
     </section>
 
+    <script>
+        const toggleButton = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
+
 
