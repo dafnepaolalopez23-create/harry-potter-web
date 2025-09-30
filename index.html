@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Harry Potter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <style>
+        #contacto form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        #contacto input,
+        #contacto textarea,
+        #contacto button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #FFD700;
+            border-radius: 8px;
+            background-color: #0d1b2a;
+            color: #FFD700;
+            font-size: 1em;
+            font-family: 'IM Fell English SC', serif;
+        }
+
+        #contacto button {
+            background-color: #FFD700;
+            color: #0d1b2a;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        #contacto button:hover {
+            background-color: #ffffff;
+            color: #000;
+        }
+
+        /* --- Reset base --- */
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Fondo: Gran Comedor --- */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'IM Fell English SC', serif;
+            color: #FFD700;
+            position: relative;
+            overflow-x: hidden;
+            z-index: 0;
+
+            background-image: url('imagenes/0000.jfif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* --- Menú mágico --- */
+        nav {
+            background-color: rgba(8, 17, 29, 0.95);
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            border-bottom: 2px solid #FFD700;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.4s ease;
+            font-family: 'Cinzel Decorative', cursive;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 12px #FFD700;
+            letter-spacing: 1px;
+        }
+
+        /* --- Contenido --- */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 60px 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        section {
+            background: rgba(13, 27, 42, 0.85);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        h1, h2 {
+            text-align: center;
+            text-shadow: 3px 3px 6px #000;
+            font-family: 'Cinzel Decorative', cursive;
+            margin-top: 60px;
+        }
+
+        h1 {
+            font-size: 3em;
+            border-bottom: 3px double #FFD700;
+            padding-bottom: 15px;
+        }
+
+        p, ul {
+            font-size: 1.3em;
+            line-height: 1.8;
+            text-shadow: 1px 1px 3px #000;
+        }
+
+        ul {
+            padding-left: 40px;
+        }
+
+        img {
+            display: block;
+            max-width: 90%;
+            height: auto;
+            margin: 40px auto;
+            border: 6px ridge #FFD700;
+            border-radius: 25px;
+            box-shadow: 0 0 35px rgba(255, 215, 0, 0.5);
+            transition: all 0.4s ease;
+        }
+
+        img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.9);
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dashed #FFD700;
+            margin: 60px 0;
+        }
+
+        strong {
+            color: #ffeb3b;
+        }
+
+        em {
+            font-style: italic;
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🌟 Menú de navegación mágico -->
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#libros">Libros</a></li>
+            <li><a href="#peliculas">Películas</a></li>
+            <li><a href="#universo">Mundo Mágico</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- 🔮 Contenido principal -->
+    <div class="container">
+
+        <section id="inicio">
+            <h1>¿Qué es Harry Potter?</h1>
+            <p>
+                <strong>Harry Potter</strong> es una serie de novelas de fantasía escrita por la autora británica <strong>J.K. Rowling</strong>.
+                La historia sigue las aventuras de un joven mago, Harry Potter, y sus amigos <em>Ron Weasley</em> y <em>Hermione Granger</em>, 
+                estudiantes del colegio de magia <em>Hogwarts</em>.
+            </p>
+            <p>
+                Desde su publicación inicial en 1997 con <em>Harry Potter y la piedra filosofal</em>, la saga ha ganado popularidad mundial,
+                ha vendido más de <strong>500 millones</strong> de copias y se ha traducido a más de <strong>80 idiomas</strong>.
+            </p>
+            <img src="imagenes/papapa.webp" alt="Harry Potter portada">
+        </section>
+
+        <hr>
+
+        <section id="libros">
+            <h1>Libros de la Saga</h1>
+            <p>La serie principal consta de siete libros:</p>
+            <ul>
+                <li>Harry Potter y la piedra filosofal (1997)</li>
+                <li>Harry Potter y la cámara secreta (1998)</li>
+                <li>Harry Potter y el prisionero de Azkaban (1999)</li>
+                <li>Harry Potter y el cáliz de fuego (2000)</li>
+                <li>Harry Potter y la Orden del Fénix (2003)</li>
+                <li>Harry Potter y el misterio del príncipe (2005)</li>
+                <li>Harry Potter y las reliquias de la muerte (2007)</li>
+            </ul>
+            <p>
+                Cada libro narra un año escolar y los desafíos que Harry enfrenta para derrotar al oscuro mago <strong>Lord Voldemort</strong>.
+            </p>
+            <img src="imagenes/D_NQ_NP_656833-MLM53400396370_012023-O.webp" alt="Libros de Harry Potter">
+        </section>
+
+        <hr>
+
+        <section id="peliculas">
+            <h1>Adaptaciones Cinematográficas</h1>
+            <p>
+                La saga fue adaptada al cine entre <strong>2001 y 2011</strong>, generando una franquicia de 8 películas que recaudaron más de 
+                <strong>7 mil millones de dólares</strong> en todo el mundo. <br>
+                <strong>Daniel Radcliffe</strong> (Harry), <strong>Emma Watson</strong> (Hermione) y <strong>Rupert Grint</strong> (Ron) se convirtieron en íconos culturales.
+            </p>
+            <img src="imagenes/harry-potter-saga 2.webp" alt="Películas de Harry Potter">
+        </section>
+
+        <hr>
+
+        <section id="universo">
+            <h1>Universo mágico (Wizarding World)</h1>
+            <p>El universo de Harry Potter se ha expandido con:</p>
+            <ul>
+                <li><strong>Animales Fantásticos</strong>, una saga de precuelas cinematográficas.</li>
+                <li><em>Harry Potter and the Cursed Child</em>, una obra de teatro aclamada.</li>
+                <li>Libros adicionales como <em>Los cuentos de Beedle el Bardo</em> y <em>Quidditch a través de los tiempos</em>.</li>
+                <li>Videojuegos como <strong>Hogwarts Legacy</strong>.</li>
+                <li>Parques temáticos como <em>The Wizarding World of Harry Potter</em>.</li>
+            </ul>
+            <img src="imagenes/qqqqqq.webp" alt="Wizarding World">
+        </section>
+    </div>
+
+    <section id="contacto">
+        <h1>¿Tienes dudas o comentarios?</h1>
+        <p>¡Envíame un mensaje y lo recibiré por correo!</p>
+
+        <form action="https://formsubmit.co/dafnepaolalopez23@cbtis179.edu.mx" method="POST">
+            <!-- Campo para el nombre -->
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="name" required>
+
+            <!-- Campo para el correo -->
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Campo para el mensaje -->
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="message" rows="6" required></textarea>
+
+            <!-- Opcionales para configuración de Formsubmit -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+
+            <!-- Botón para enviar -->
+            <button type="submit">Enviar mensaje</button>
+        </form>
+    </section>
+
+</body>
+</html>
